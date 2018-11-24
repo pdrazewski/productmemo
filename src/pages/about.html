@@ -1,0 +1,10 @@
+{% extends "page.html" %}
+
+{% set title = data.pages.about.title %}
+
+{% set pageContent %}
+    <div class="c-content">
+        {{ data.pages.about.content|safe }}
+    </div>
+{% endset %}
+ 

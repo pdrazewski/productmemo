@@ -1,0 +1,5 @@
+{% for item in data.menu.main %}
+	<li>
+    	<a class="{{item.class}}" href="/{{item.link}}.html">{{item.name}}</a>
+	</li>
+{% endfor %}     

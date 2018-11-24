@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" {% if root %}class="{{root}}"{% endif %}>
+<head>
+  	<meta charset="UTF-8"> 
+  	<title>{{ data.title }}</title>
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, shrink-to-fit=no">
+  	<link rel="stylesheet" href="assets/css/style.css">
+  	{% include "_common/meta.html" %}
+</head>
+<body {% if pageType %}class="{{pageType}}"{% endif %}>
+	<div class="b-wrapper">
+		{% block header %}
+			{% include "_common/header.html" %}
+		{% endblock %} 
+		<div class="b-content">
+			{% block content %} {% endblock %} 
+		</div>
+		{% include "_common/footer.html" %} 
+	</div>
+</body>
+</html> 

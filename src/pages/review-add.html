@@ -1,0 +1,67 @@
+{% extends "app.html" %}
+
+{% set title = data.pages.review.title %}
+
+{% block content %}
+<h2 class="c-app_title">Add new product review</h2>
+<img src="https://i.pinimg.com/236x/ea/5e/28/ea5e284f423a88176aabde738d317feb.jpg" class="c-img" />
+<table class="c-review">
+    <tr>
+        <td>Product name</td>
+        <td>
+            <input type="text" value="Abelur 16y" />
+        </td>
+    </tr>
+    <tr>
+            <td>Product image</td>
+            <td>
+                <input type="file" />
+            </td>
+        </tr>
+    <tr>
+        <td>Product price</td>
+        <td>
+            <input type="text" />
+        </td>
+    </tr>
+    <tr>
+        <td>Product rate</td>
+        <td>
+            <input type="text" />
+        </td>
+    </tr>
+    <tr>
+        <td>Review / memo </td>
+        <td>
+            <textarea></textarea>
+        </td>
+    </tr>
+    <tr>
+            <td>Category</td>
+            <td>
+                <select>
+                    <option>Electronics</option>
+                    <option>Electronics</option>
+                    <option>Electronics</option>
+                    <option>Electronics</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+                <td>Tags</td>
+                <td>
+                    tag1, tag2, tag3
+                </td>
+            </tr>
+    <tr>
+            <td>Private</td>
+            <td>
+                <input type="checkbox" />
+                <a href="#" class="c-btn">Save review</a>
+            </td>
+        </tr>
+
+</table>
+
+{% endblock %}
+  

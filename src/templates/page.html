@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% set title = title|default("") %}
+{% import "content.html" as macro %}
+
+{% block content %}
+<div class="clearfix">
+    {{ macro.content(title, pageContent) }}
+</div>
+{% endblock %} 

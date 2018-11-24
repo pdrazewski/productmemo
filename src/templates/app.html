@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% set title = title|default("") %}
+
+{% block header %}
+    <div class="b-header">
+        <div class="b-header_content clearfix">
+            <h1 class="c-logo">
+                    <a title="logo" href="/"><div>pm</div></a>
+            </h1> 
+            <div class="c-search">
+                <input type="text" />
+            </div>
+            <ul class="c-menu">  
+                {% include "menu-app.html" %}  
+            </ul>  
+        </div>
+    </div>      
+{% endblock %}
+
+{% block content %}
+
+{% endblock %} 
