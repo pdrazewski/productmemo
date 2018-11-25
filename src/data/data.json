@@ -9,7 +9,7 @@
             },
             {
                 "name": "Collections",
-                "link": "collections-list"
+                "link": "collection-list"
             },
             {
                 "name": "Products",
@@ -27,15 +27,11 @@
                 "link": "about"
             },
             {
-                "name": "Plans",
+                "name": "Pricing",
                 "link": "#"
             },
             {
                 "name": "Partners",
-                "link": "#"
-            },
-            {
-                "name": "FAQ",
                 "link": "#"
             },
             {

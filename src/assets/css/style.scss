@@ -23,21 +23,32 @@ body {
 // wrapper for content
 .b-wrapper {
     margin: 0 auto;
-    max-width: $wrapperWidth;
+    max-width: 100%;
     position: relative;
 }
 .b-header {
     padding: 20px 0;
     border-bottom: 1px solid #f5f5f5;
     &_content {
+        min-height: 43px;
+        padding: 0 20px;
         clear: both;
         overflow: hidden;
+        margin: 0 auto;
+        max-width: $wrapperWidth;
+        position: relative;
+        @include breakpoint('tablet') {
+            padding: 0;
+        }
     }
 }
 .c-logo {
     float: left;
     color: #000; 
     margin-top: 8px;
+    &.is-icon {
+        margin-top: 0;
+    }
     div {
         width: 41px;
         background: #1f69af;
@@ -64,7 +75,11 @@ body {
     }
 }
 .c-menu {
+    display: none;
     float: right;
+    @include breakpoint('tablet') {
+        display: block;
+    }
     li {
         display: block;
         float: left;
@@ -96,9 +111,12 @@ body {
     max-width: 80%;
     text-align: center;
     margin: 0 auto;
-    padding: 50px 0;
+    @include breakpoint('tablet'){
+        padding: 50px 0;
+    }
     &_lead {
         font-size: 50px;
+        line-height: 55px;
         padding-bottom: 25px;
     }
     &_meta {
@@ -110,6 +128,7 @@ body {
         clear: both;
         overflow: hidden;
         a {
+            
             margin: 0 10px;
             color: #fff;
             display: inline-block;
@@ -122,7 +141,14 @@ body {
             padding: 12px 20px;
             background: #1f69af;
             text-decoration: none;
+            width: 100%;
+            margin-bottom: 15px;
+            box-sizing: border-box;
             transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+            @include breakpoint('tablet'){
+                width: auto;
+                margin-bottom: 0;
+            }
             &:hover {
                 background: #1f69af;
                 color: #fff;
@@ -133,6 +159,13 @@ body {
 .b-content {
     padding: 20px 0;
     position: relative;
+    max-width: $wrapperWidth;
+    margin: 0 auto;
+}
+.is-home {
+    .b-content {
+        max-width: 100%;
+    }
 }
 .b-footer {
     border-top: 1px solid #eee;
@@ -152,7 +185,10 @@ body {
             color: #fff;
         }
         .c-feature_items {
-            margin: 20px 150px;
+            margin: 20px;
+            @include breakpoint('tablet') {
+                margin: 50px 150px;
+            }
         }
         .c-feature_item {
             text-align: center;
@@ -183,19 +219,39 @@ body {
     }
     &_items {
         max-width: $wrapperWidth;
-        margin: 50px 150px;
+        margin: 20px;
         clear: both;
         overflow: hidden;
+        @include breakpoint('tablet') {
+            margin: 50px 150px;
+        }
         .c-feature_item {
-            width: 31%;
-            padding-right: 2%;
             float: left;
             color: #444;
+            text-align: center;
+            width: 100%;
+            margin-bottom: 30px;
+            @include breakpoint('tablet') {
+                width: 31%;
+                margin-bottom: 0;
+                padding-right: 2%;
+            }
+            h4 {
+                text-align: center;
+                font-size: 20px;
+                margin: 20px 0;
+            }
             img {
                 text-align: center;
                 margin: 0 auto;
                 display: block;
                 margin-bottom: 15px;
+            }
+            p {
+                text-align: center;
+                line-height: 24px;
+                font-size: 15px;
+                padding: 0 10px;
             }
         }
     }
@@ -220,12 +276,55 @@ body {
 
 
 
-
+.c-collection-list {
+    column-width: 550px;
+    column-gap: 15px;
+    padding: 0 20px;
+    @include breakpoint('tablet') {
+        padding: 0;
+    }
+}
+.c-collection-item {
+    border: 1px solid #eee;
+    border-radius: 15px;
+    margin: 0 2px 15px;
+    padding: 15px;
+    padding-bottom: 10px;
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+    p {
+        margin-bottom: 5px;
+    }
+    img {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+    span {
+        font-weight: bold;
+        color: #555;
+    }
+}
+.c-collection-name {
+    font-size: 20px;
+    margin: 10px 0;
+    font-weight: bold;
+}
+.c-collection-desc {
+    font-size: 15px;
+    line-break: 24px;
+    margin: 10px 0;
+}
    
    
    #columns {
     column-width: 220px;
     column-gap: 15px;
+    padding: 0 20px;
+    @include breakpoint('tablet') {
+        padding: 0;
+    }
    }
    
    div#columns figure {
@@ -278,15 +377,17 @@ body {
    }
    
    @media screen and (max-width: 750px) { 
-     #columns { column-gap: 0px; }
-     #columns figure { width: 100%; }
+     #columns { column-gap: 10px;     column-width: 128px; }
    }
 
    .c-search {
     position: absolute;
     left: 80px;
-    top: 26px;
-    width: 700px;
+    top: 0;
+    width: 70%;
+    @include breakpoint('tablet') {
+        width: 700px;
+    }
     input {
         width: 100%;
     padding: 10px;
@@ -298,10 +399,17 @@ body {
    .c-app_title {
        font-size: 20px;
        font-weight: bold;
-       padding-bottom: 30px;
+       padding: 20px;
+       @include breakpoint('tablet') {
+        padding: 0 0 30px;
+       }
    }
    .c-review {
+       margin: 20px;
        width: 100%;
+       @include breakpoint('tablet') {
+           margin: 0;
+       }
        td {
            padding: 10px 20px 10px 0;
        }
@@ -317,9 +425,14 @@ body {
        }
    }
    .c-img {
+        position: static;
+        top: 20px;
+        right: 20px;
+        margin: 0 auto;
+        display: block;
+        @include breakpoint('tablet') {
        position: absolute;
-       top: 20px;
-       right: 20px;
+        }
    }
    .c-btn {
        margin: 0 10px;
